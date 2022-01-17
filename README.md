@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Travel-Journal-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a small project that shows how the folder and files are stuctured in react.
+It is also figure out how the data is fetched from a sparated js file that contains an array of objects that are holding the trip data
+I have designed it in Adobe XD [Behance](https://www.behance.net/gallery/135281705/Travel-Journal).
 
-## Available Scripts
+# project components
 
-In the project directory, you can run:
+The components in the project are two types
 
-### `npm start`
+- **components** : for small components that might reusable many times
+- **containers**: for larg component that hold a small ones (components) such as TripList container holds many other tripCard components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**components**:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- nav bar component
+- footer component
+- tripCard component: individual trip card data that contains information about individual trip such as image of the city, city name and its stat, trip date, city information and the ability of booking if the trip is available
 
-### `npm test`
+# Containers:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TripList: it is a large components that holds other small components which are tripCard
 
-### `npm run build`
+# Project Data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+project data is located in a separated js file in the path **src/data/tripData.js**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# project testing:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Removing data
+  remove certain tripdata such as the following
+  ` { id:3, cityName:'Frankfurt', state:'Hessen', dateFrom:'4-2-2022', dateTo:'9-2-2022', about:'In this amazing city, you will be very happy with its buildings and a mazing Mains river. It is called sometimes as "Bankfort";it is leading commercial, financial, and high-technology center', cityImage:'frankfurt.png', isAvailable:1, // availability of booking },`
+  **Result:** its trip component will disappear from teh layout
 
-### `npm run eject`
+- Adding another trip data  
+   `{ id:4, cityName:'Hmaburg', state:'Hamburg', dateFrom:'7-2-2022', dateTo:'5-2-2022', about:'Haburg is a amazing city in the North of Germany. It is one of the Important ports in Europe. You can take a wonderfull ship trip to Danemark. This city has many many bridges. It called some times as Vinice of the North. we are sure that you will love this wonderfull city', cityImage:'Hamburg.png', isAvailable:1, // availability of booking },`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  **Result:** Another trip card for Hmburg will be added to the tripList
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Hint: Ensure that the tripData js file remains well structured after adding or removing data otherwise you will get an error: you shoul ensure that each object is separated by (,) from the pervious and the secon object as well as each property in each obkect is also sepaated from other properties by (,)`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Check availability
+  try to change the value of the property isAvailable from 0 to 1 or from 1 to 0 in any trip data
+  Result: if the isAvailable equal to 0 that means that the trip is complete ans then the complete badge will appears on the image and you can not book this trip any more
+  and if the value is equal to 1 that means you can book the trip and there will not be complete badge
+- Responsive mode
+  the application is fully responsive with all type of screens

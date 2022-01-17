@@ -1,0 +1,55 @@
+/* navbar of the travel-journal app
+   it contains logo image, logo text and menu in a flex div 
+*/
+.travel-journal__navbar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #ffdd00;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* logo image */
+.travel-journal__navbar__logo-img {
+  color: #ff0000;
+  font-size: 30px;
+  margin-right: 0.5rem;
+}
+
+/* logo text */
+.travel-journal__navbar__menu,
+.travel-journal__navbar__logo-text {
+  margin: 0;
+}
+.travel-journal__navbar__logo-text {
+  margin-right: auto;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+
+
+/* bar menu */
+.travel-journal__navbar__menu {
+  color: #707070;
+  font-size: 30px;
+  cursor: pointer;
+}
+.travel-journal__navbar__menu:hover {
+  color: #ff0000;
+  font-size: 30px;
+}
+
+@media(max-width:300px){
+
+  /* hide the logo text */
+  .travel-journal__navbar__logo-text{
+    display: none;
+  }
+  .travel-journal__navbar__logo-img{
+    margin-right: auto;
+  }
+  
+}
